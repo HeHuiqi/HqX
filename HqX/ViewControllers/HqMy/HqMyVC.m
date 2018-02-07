@@ -33,6 +33,9 @@
 }
 - (void)tapGesture:(UITapGestureRecognizer *)tap{
     
+    
+//    [UIViewController attemptRotationToDeviceOrientation];
+    
     HqMyInfoVC *myInfo = [[HqMyInfoVC alloc] init];
     myInfo.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:myInfo animated:YES];

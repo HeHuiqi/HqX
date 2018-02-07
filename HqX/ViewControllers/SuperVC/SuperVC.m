@@ -182,6 +182,11 @@
         }
     }
 }
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+
+    _navBarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.navBarheight);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

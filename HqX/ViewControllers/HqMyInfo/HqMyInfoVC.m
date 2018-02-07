@@ -28,6 +28,10 @@
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    _tableView.frame = CGRectMake(0,self.navBarheight,self.view.bounds.size.width, self.view.bounds.size.height-self.navBarheight);
+}
 - (void)initView{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.navBarheight,self.view.bounds.size.width, self.view.bounds.size.height-self.navBarheight) style:UITableViewStylePlain];
     _tableView.delegate = self;
