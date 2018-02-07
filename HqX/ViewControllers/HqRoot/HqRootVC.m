@@ -10,7 +10,6 @@
 #import "HqHomeVC.h"
 #import "HqMyVC.h"
 #import "SuperNavigationVC.h"
-
 @interface HqRootVC ()
 
 @end
@@ -31,6 +30,7 @@
     SuperNavigationVC *myNav = [[SuperNavigationVC alloc] initWithRootViewController:my];
     
     self.viewControllers = @[homeNav,myNav];
+    self.selectedIndex = 1;
 }
 
 - (void)didReceiveMemoryWarning {

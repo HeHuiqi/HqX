@@ -8,6 +8,8 @@
 
 #import "HqMyVC.h"
 #import "HqMyInfoVC.h"
+#import "UIView+HqAutoLayout.h"
+
 @interface HqMyVC ()
 
 @end
@@ -16,6 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *lab = [[UILabel alloc] init];
+    [self.view addSubview:lab];
+    [lab centerXWithView:self.view space:0];
+    [lab centerYWithView:self.view space:0];
+    lab.text = @"点击屏幕进入用户详情";
     [self tapView:self.view];
 }
 - (void)tapView:(UIView *)view{

@@ -8,6 +8,8 @@
 
 #import "SuperVC.h"
 #import "Masonry.h"
+#import "UIView+HqAutoLayout.h"
+
 @interface SuperVC ()
 
 @end
@@ -22,13 +24,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.navBarView];
-    self.navBarView.backgroundColor  = [UIColor orangeColor];
+    self.navBarView.backgroundColor  = HqNavBarColor;
     [self titelLab];
  
     
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.leftBtnImageName = nil;
-    self.leftBtn.tintColor = [UIColor blackColor];
+    self.leftBtn.tintColor = HqBarBtnTintColor;
     
    
 }
@@ -36,14 +38,21 @@
     if (!_titelLab) {
         _titelLab = [[UILabel alloc]init];
         _titelLab.textColor = HqTitleColor;
-        _titelLab.font = [UIFont boldSystemFontOfSize:18];
+        _titelLab.font = [UIFont boldSystemFontOfSize:HqTitleFontsize];
         [self.navBarView addSubview:_titelLab];
+        /*
         [_titelLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.navBarView.mas_centerX);
 //            make.left.equalTo(self.navBarView).offset(kZoomValue(50));
             make.bottom.equalTo(_navBarView).offset(0);
             make.height.mas_equalTo(44);
-        }];
+        }];*/
+
+        _titelLab.translatesAutoresizingMaskIntoConstraints = NO;
+        [_titelLab bottomWithView:self.navBarView space:0];
+        [_titelLab centerXWithView:self.navBarView space:0];
+        [_titelLab height:44];
+        
     }
     return _titelLab;
 }
@@ -56,11 +65,16 @@
     self.leftBtn.tintColor = [UIColor whiteColor];
 
     [_leftBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    /*
     [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_navBarView).offset(0);
         make.bottom.equalTo(_navBarView).offset(0);
         make.size.mas_equalTo(CGSizeMake(50, 44));
     }];
+    */
+    [_leftBtn leftWithView:self.navBarView space:0];
+    [_leftBtn bottomWithView:self.navBarView space:0];
+    [_leftBtn size:CGSizeMake(50, 44)];
 }
 - (void)setLeftBtnImageName:(NSString *)leftBtnImageName{
 
@@ -78,18 +92,23 @@
 
 - (void)setRightBtn:(UIButton *)rightBtn{
     _rightBtn = rightBtn;
-    
     if (rightBtn) {
         [_rightBtn removeFromSuperview];
         _rightBtn = rightBtn;
         [self.navBarView addSubview:_rightBtn];
     }
+    /*
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_navBarView).offset(0);
         make.bottom.equalTo(_navBarView).offset(0);
         make.size.mas_equalTo(CGSizeMake(50, 44));
     }];
+    */
+    [_rightBtn rightWithView:self.navBarView space:0];
+    [_rightBtn bottomWithView:self.navBarView space:0];
+    [_rightBtn size:CGSizeMake(50, 44)];
 }
+
 - (void)setRightBtnImageName:(NSString *)rightBtnImageName{
     
     UIImage *image = [UIImage imageNamed:rightBtnImageName];
@@ -134,20 +153,19 @@
         UIView *xline = [[UIView alloc] init];
         xline.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_navBarView addSubview:xline];
+        /*
         [xline mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(_navBarView).offset(0);
             make.left.equalTo(self.view).offset(0);
-            make.right.equalTo(self.view).offset(0);
             make.size.mas_equalTo(CGSizeMake(self.view.bounds.size.width, 0.5));
         }];
+        */
+        [xline bottomWithView:self.navBarView space:0];
+        [xline leftWithView:self.navBarView space:0];
+        [xline size:CGSizeMake(self.view.bounds.size.width, 0.5)];
         _bottomLine = xline;
     }
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 
 -(void)backClick
 {
@@ -164,4 +182,9 @@
         }
     }
 }
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 @end
