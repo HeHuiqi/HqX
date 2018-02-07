@@ -20,6 +20,8 @@
     [super viewDidLoad];
     UILabel *lab = [[UILabel alloc] init];
     [self.view addSubview:lab];
+    self.leftBtn.hidden = YES;
+    self.title = @"My";
     [lab centerXWithView:self.view space:0];
     [lab centerYWithView:self.view space:0];
     lab.text = @"点击屏幕进入用户详情";
@@ -30,9 +32,11 @@
     [view addGestureRecognizer:tap];
 }
 - (void)tapGesture:(UITapGestureRecognizer *)tap{
+    
     HqMyInfoVC *myInfo = [[HqMyInfoVC alloc] init];
     myInfo.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:myInfo animated:YES];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

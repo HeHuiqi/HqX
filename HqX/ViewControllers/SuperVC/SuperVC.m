@@ -27,7 +27,7 @@
     self.navBarView.backgroundColor  = HqNavBarColor;
     [self titelLab];
  
-    
+
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.leftBtnImageName = nil;
     self.leftBtn.tintColor = HqBarBtnTintColor;

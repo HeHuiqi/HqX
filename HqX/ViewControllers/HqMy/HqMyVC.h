@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SuperVC.h"
 
-@interface HqMyVC : UIViewController
+@interface HqMyVC : SuperVC
 
 @end
