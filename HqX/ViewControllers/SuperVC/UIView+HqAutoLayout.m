@@ -10,73 +10,77 @@
 
 @implementation UIView (HqAutoLayout)
 
+#pragma mark - top、bottom、left、right
+
 - (NSLayoutConstraint *)topWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    view2.translatesAutoresizingMaskIntoConstraints = NO;
-
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeTop multiplier:1.0 constant:space];
-    [view2 addConstraint:layout];
-
+   NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeTop];
     return layout;
 }
 - (NSLayoutConstraint *)bottomWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    //    view2.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeBottom multiplier:1.0 constant:space];
-    [view2 addConstraint:layout];
+    NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeBottom];
+
     return layout;
 }
 - (NSLayoutConstraint *)leftWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    view2.translatesAutoresizingMaskIntoConstraints = NO;
+   NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeLeft];
 
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeLeft multiplier:1.0 constant:space];
-    [view2 addConstraint:layout];
     return layout;
 }
 - (NSLayoutConstraint *)rightWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    view2.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeRight];
 
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeRight multiplier:1.0 constant:space];
-    [view2 addConstraint:layout];
     return layout;
 }
-
+#pragma mark - centerX、centerY
 - (NSLayoutConstraint *)centerXWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    view2.translatesAutoresizingMaskIntoConstraints = NO;
 
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:space];
-    [view2 addConstraint:layout];
+    NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeCenterX];
+
     return layout;
 }
 - (NSLayoutConstraint *)centerYWithView:(UIView *)view2 space:(CGFloat)space{
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    view2.translatesAutoresizingMaskIntoConstraints = NO;
 
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:view2 attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:space];
+    NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeCenterY];
+
+    return layout;
+}
+- (NSLayoutConstraint *)baseWithView:(UIView *)view2 space:(CGFloat)space attribute:(NSLayoutAttribute)attribute {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    //    view2.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:attribute relatedBy:NSLayoutRelationEqual toItem:view2 attribute:attribute multiplier:1.0 constant:space];
     [view2 addConstraint:layout];
 
     return layout;
 }
-- (NSLayoutConstraint *)width:(CGFloat)width{
+#pragma mark - width、height
+- (NSLayoutConstraint *)widthEqualView:(UIView *)view{
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0 constant:width];
-    [self addConstraint:layout];
+    NSLayoutConstraint *layout = [self baseEqualView:view space:0 attribute:NSLayoutAttributeWidth];
     return layout;
 }
-- (NSLayoutConstraint *)height:(CGFloat)width{
+- (NSLayoutConstraint *)heightEqualView:(UIView *)view{
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.0 constant:width];
-    [self addConstraint:layout];
+    NSLayoutConstraint *layout = [self baseEqualView:view space:0 attribute:NSLayoutAttributeHeight];
+    return layout;
+}
+- (NSLayoutConstraint *)width:(CGFloat)width{
+    NSLayoutConstraint *layout = [self baseEqualView:nil space:width attribute:NSLayoutAttributeWidth];
+    return layout;
+}
+- (NSLayoutConstraint *)height:(CGFloat)height{
+     NSLayoutConstraint *layout = [self baseEqualView:nil space:height attribute:NSLayoutAttributeHeight];
     return layout;
 }
 - (void)size:(CGSize)size{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self width:size.width];
     [self height:size.height];
+}
+- (NSLayoutConstraint *)baseEqualView:(UIView *)view space:(CGFloat)space attribute:(NSLayoutAttribute)attribute{
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:attribute relatedBy:NSLayoutRelationEqual toItem:view attribute:attribute multiplier:1.0 constant:space];
+    [self addConstraint:layout];
+    return layout;
 }
 @end
