@@ -11,14 +11,12 @@
 @interface UIView (HqAutoLayout)
 
 #pragma mark - top、bottom、left、right
-
 - (NSLayoutConstraint *)topWithView:(UIView *)view2 space:(CGFloat)space;
 - (NSLayoutConstraint *)leftWithView:(UIView *)view2 space:(CGFloat)space;
 - (NSLayoutConstraint *)rightWithView:(UIView *)view2 space:(CGFloat)space;
 - (NSLayoutConstraint *)bottomWithView:(UIView *)view2 space:(CGFloat)space;
 
 #pragma mark - centerX、centerY
-
 - (NSLayoutConstraint *)centerXWithView:(UIView *)view2 space:(CGFloat)space;
 - (NSLayoutConstraint *)centerYWithView:(UIView *)view2 space:(CGFloat)space;
 
