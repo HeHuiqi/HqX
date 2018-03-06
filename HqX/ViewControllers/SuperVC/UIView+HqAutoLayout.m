@@ -26,6 +26,11 @@
 
     return layout;
 }
+- (NSLayoutConstraint *)leftWithViewRight:(UIView *)view2 space:(CGFloat)space{
+    NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute1:NSLayoutAttributeLeft attribute2:NSLayoutAttributeRight];
+    
+    return layout;
+}
 - (NSLayoutConstraint *)rightWithView:(UIView *)view2 space:(CGFloat)space{
     NSLayoutConstraint *layout = [self baseWithView:view2 space:space attribute:NSLayoutAttributeRight];
 
@@ -53,6 +58,17 @@
 
     return layout;
 }
+- (NSLayoutConstraint *)baseWithView:(UIView *)view2 space:(CGFloat)space attribute1:(NSLayoutAttribute)attribute1 attribute2:(NSLayoutAttribute)attribute2{
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    //    view2.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *layout = [NSLayoutConstraint constraintWithItem:self attribute:attribute1 relatedBy:NSLayoutRelationEqual toItem:view2 attribute:attribute2 multiplier:1.0 constant:space];
+    [view2 addConstraint:layout];
+    
+    return layout;
+}
+
+
 #pragma mark - width、height
 - (NSLayoutConstraint *)widthEqualView:(UIView *)view{
     self.translatesAutoresizingMaskIntoConstraints = NO;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E074056204E86D100A782E5 /* HqUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074055204E86D100A782E5 /* HqUser.m */; };
+		8E07405A204E876E00A782E5 /* HqInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074059204E876E00A782E5 /* HqInputCell.m */; };
+		8E07405E204E8BC100A782E5 /* HqInputModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07405D204E8BC100A782E5 /* HqInputModel.m */; };
 		8E4D68B62029BB4F0039BE57 /* SuperNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D68B22029BB4E0039BE57 /* SuperNavigationVC.m */; };
 		8E4D68B72029BB4F0039BE57 /* SuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D68B32029BB4E0039BE57 /* SuperVC.m */; };
 		8E4D68D62029BC030039BE57 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8E4D68BA2029BC030039BE57 /* LICENSE */; };
@@ -35,6 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E074054204E86D100A782E5 /* HqUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUser.h; sourceTree = "<group>"; };
+		8E074055204E86D100A782E5 /* HqUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqUser.m; sourceTree = "<group>"; };
+		8E074058204E876E00A782E5 /* HqInputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqInputCell.h; sourceTree = "<group>"; };
+		8E074059204E876E00A782E5 /* HqInputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqInputCell.m; sourceTree = "<group>"; };
+		8E07405C204E8BC100A782E5 /* HqInputModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqInputModel.h; sourceTree = "<group>"; };
+		8E07405D204E8BC100A782E5 /* HqInputModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqInputModel.m; sourceTree = "<group>"; };
 		8E4D68B22029BB4E0039BE57 /* SuperNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperNavigationVC.m; sourceTree = "<group>"; };
 		8E4D68B32029BB4E0039BE57 /* SuperVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperVC.m; sourceTree = "<group>"; };
 		8E4D68B42029BB4E0039BE57 /* SuperVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperVC.h; sourceTree = "<group>"; };
@@ -99,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E074057204E874C00A782E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E074058204E876E00A782E5 /* HqInputCell.h */,
+				8E074059204E876E00A782E5 /* HqInputCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E07405B204E8B9A00A782E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E074054204E86D100A782E5 /* HqUser.h */,
+				8E074055204E86D100A782E5 /* HqUser.m */,
+				8E07405C204E8BC100A782E5 /* HqInputModel.h */,
+				8E07405D204E8BC100A782E5 /* HqInputModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8E4D68B12029BB4E0039BE57 /* SuperVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +267,8 @@
 		8EFDCC4E2029B4AA00D82A76 /* HqMyInfo */ = {
 			isa = PBXGroup;
 			children = (
+				8E07405B204E8B9A00A782E5 /* Models */,
+				8E074057204E874C00A782E5 /* Views */,
 				8EFDCC552029B50100D82A76 /* HqMyInfoVC.h */,
 				8EFDCC562029B50100D82A76 /* HqMyInfoVC.m */,
 			);
@@ -320,10 +351,13 @@
 				8EFDCC2E2029B38100D82A76 /* ViewController.m in Sources */,
 				8EFDCC512029B4E400D82A76 /* HqHomeVC.m in Sources */,
 				8E4D68DC2029BC030039BE57 /* NSArray+MASAdditions.m in Sources */,
+				8E07405A204E876E00A782E5 /* HqInputCell.m in Sources */,
 				8EFDCC392029B38100D82A76 /* main.m in Sources */,
 				8E4D68DD2029BC030039BE57 /* View+MASAdditions.m in Sources */,
 				8E4D68D72029BC030039BE57 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8E4D68D92029BC030039BE57 /* MASCompositeConstraint.m in Sources */,
+				8E07405E204E8BC100A782E5 /* HqInputModel.m in Sources */,
+				8E074056204E86D100A782E5 /* HqUser.m in Sources */,
 				8EFDCC542029B4F100D82A76 /* HqMyVC.m in Sources */,
 				8E4D68D82029BC030039BE57 /* ViewController+MASAdditions.m in Sources */,
 				8E4D68E02029BC030039BE57 /* MASViewAttribute.m in Sources */,

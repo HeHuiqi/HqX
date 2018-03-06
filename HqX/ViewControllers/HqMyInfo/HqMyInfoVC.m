@@ -7,10 +7,12 @@
 //
 
 #import "HqMyInfoVC.h"
+#import "HqInputCell.h"
 
 @interface HqMyInfoVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSArray *datas;
 
 @end
 
@@ -18,15 +20,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     self.view.backgroundColor = [UIColor purpleColor];
     UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = left;
     [self initView];
     self.title = @"MyInfo";
     self.leftBtnImageName = @"back";
+
 }
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)initData{
+    HqInputModel *name = [[HqInputModel alloc] init];
+    name.hqKey = @"name";
+    name.hqShowKey = @"姓名";
+    name.hqPlaceHoder = @"请入姓名";
+    name.hqShowValue = @"小明";
+    
+    HqInputModel *age = [[HqInputModel alloc] init];
+    age.hqKey = @"age";
+    age.hqShowKey = @"年龄";
+    name.hqPlaceHoder = @"请入年龄";
+    age.hqShowValue = @"20";
+    
+    self.datas = @[name,age];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -40,18 +59,18 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIndentfier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentfier];
+    HqInputCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentfier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentfier];
+        cell = [[HqInputCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentfier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    cell.inputModel = _datas[indexPath.row];
     
     return cell;
 }
