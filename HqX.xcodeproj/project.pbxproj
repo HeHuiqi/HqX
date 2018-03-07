@@ -111,6 +111,8 @@
 		8E074057204E874C00A782E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E07405C204E8BC100A782E5 /* HqInputModel.h */,
+				8E07405D204E8BC100A782E5 /* HqInputModel.m */,
 				8E074058204E876E00A782E5 /* HqInputCell.h */,
 				8E074059204E876E00A782E5 /* HqInputCell.m */,
 			);
@@ -122,8 +124,6 @@
 			children = (
 				8E074054204E86D100A782E5 /* HqUser.h */,
 				8E074055204E86D100A782E5 /* HqUser.m */,
-				8E07405C204E8BC100A782E5 /* HqInputModel.h */,
-				8E07405D204E8BC100A782E5 /* HqInputModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";

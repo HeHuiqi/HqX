@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+HqAutoLayout.h"
 #import "HqInputModel.h"
-@interface HqInputCell : UITableViewCell
+@interface HqInputCell : UITableViewCell<UITextFieldDelegate>
 
 @property (nonatomic,strong) UILabel *keyLab;
 @property (nonatomic,strong) UITextField *valueTf;

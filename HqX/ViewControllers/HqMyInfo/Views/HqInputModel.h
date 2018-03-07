@@ -17,4 +17,8 @@
 @property (nonatomic,copy) NSString *hqShowKey;//展示的key
 @property (nonatomic,copy) NSString *hqShowValue;//展示的值
 
+@property (nonatomic,assign) int hqInputLength;//输入字符数字
+
+@property (nonatomic,assign) BOOL isReadOnly;//是否只读
+
 @end

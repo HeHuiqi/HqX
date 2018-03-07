@@ -38,14 +38,45 @@
     name.hqShowKey = @"姓名";
     name.hqPlaceHoder = @"请入姓名";
     name.hqShowValue = @"小明";
+    name.hqInputLength = 4;
+    
+    HqInputModel *nickname = [[HqInputModel alloc] init];
+    nickname.hqKey = @"nickname";
+    nickname.hqShowKey = @"昵称";
+    nickname.hqPlaceHoder = @"请入昵称";
     
     HqInputModel *age = [[HqInputModel alloc] init];
     age.hqKey = @"age";
     age.hqShowKey = @"年龄";
-    name.hqPlaceHoder = @"请入年龄";
+    age.hqPlaceHoder = @"请入年龄";
     age.hqShowValue = @"20";
+    age.hqInputLength = 3;
     
-    self.datas = @[name,age];
+    HqInputModel *idNum = [[HqInputModel alloc] init];
+    idNum.hqKey = @"idNum";
+    idNum.hqShowKey = @"证件号吗";
+    idNum.hqPlaceHoder = @"请入证件号码";
+    idNum.hqShowValue = @"12345";
+    idNum.hqInputLength = 18;
+    idNum.isReadOnly = YES;
+    
+    HqInputModel *mobile = [[HqInputModel alloc] init];
+    mobile.hqKey = @"mobile";
+    mobile.hqShowKey = @"手机号";
+    mobile.hqPlaceHoder = @"请入手机号";
+    
+    HqInputModel *degree = [[HqInputModel alloc] init];
+    degree.hqKey = @"degree";
+    degree.hqShowKey = @"学历";
+    degree.hqPlaceHoder = @"请入学历";
+    
+    HqInputModel *address = [[HqInputModel alloc] init];
+    address.hqKey = @"address";
+    address.hqShowKey = @"地址";
+    address.hqPlaceHoder = @"请入地址";
+    
+    
+    self.datas = @[name,nickname,age,idNum,mobile,degree,address];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -82,7 +113,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)backClick{
+    [self.view endEditing:YES];
 
+    HqInputModel *model = self.datas[0];
+    NSLog(@"model.value==%@",model.hqShowValue);
+    [super backClick];
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 /*
 #pragma mark - Navigation
 

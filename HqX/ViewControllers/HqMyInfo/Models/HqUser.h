@@ -10,8 +10,14 @@
 
 @interface HqUser : NSObject
 
+@property (nonatomic,copy) NSString *idNum;
 @property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *nickname;
 @property (nonatomic,assign) int age;
 @property (nonatomic,assign) int height;
+@property (nonatomic,copy) NSString *degree;
+@property (nonatomic,copy) NSString *address;
+@property (nonatomic,copy) NSString *mobile;
+
 
 @end
