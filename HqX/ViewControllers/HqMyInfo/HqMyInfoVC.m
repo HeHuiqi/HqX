@@ -8,11 +8,12 @@
 
 #import "HqMyInfoVC.h"
 #import "HqInputCell.h"
-
 @interface HqMyInfoVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *datas;
+
+@property (nonatomic,strong) NSMutableDictionary *dataDics;
 
 @end
 
@@ -65,18 +66,25 @@
     mobile.hqShowKey = @"手机号";
     mobile.hqPlaceHoder = @"请入手机号";
     
-    HqInputModel *degree = [[HqInputModel alloc] init];
-    degree.hqKey = @"degree";
-    degree.hqShowKey = @"学历";
-    degree.hqPlaceHoder = @"请入学历";
+    HqInputModel *degree = HqInputModel(@"degree", @"请入学历", @"学历", nil, 0, NO);
     
     HqInputModel *address = [[HqInputModel alloc] init];
     address.hqKey = @"address";
     address.hqShowKey = @"地址";
     address.hqPlaceHoder = @"请入地址";
     
+    NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
+    [dataDic hqSetOjectValue:name forKey:name.hqKey];
+    [dataDic hqSetOjectValue:nickname forKey:nickname.hqKey];
+    [dataDic hqSetOjectValue:age forKey:age.hqKey];
+    [dataDic hqSetOjectValue:idNum forKey:idNum.hqKey];
+    [dataDic hqSetOjectValue:mobile forKey:mobile.hqKey];
+    [dataDic hqSetOjectValue:degree forKey:degree.hqKey];
+    [dataDic hqSetOjectValue:address forKey:address.hqKey];
+    self.dataDics = dataDic;
     
-    self.datas = @[name,nickname,age,idNum,mobile,degree,address];
+    
+//    self.datas = @[name,nickname,age,idNum,mobile,degree,address];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -90,7 +98,9 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.datas.count;
+//    return self.datas.count;
+    return self.dataDics.count;
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
@@ -101,7 +111,9 @@
     if (!cell) {
         cell = [[HqInputCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentfier];
     }
-    cell.inputModel = _datas[indexPath.row];
+//    cell.inputModel = _datas[indexPath.row];
+    cell.inputModel = [_dataDics hqGetValueWithIndex:indexPath.row];
+
     
     return cell;
 }

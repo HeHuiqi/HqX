@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDictionary+HqOrderDic.h"
+
+#define HqInputModel(key1,placehoder1,showkey1,showValue1,inputLength1,readOnly1)  [HqInputModel inputModelWithKey:key1 placehoder:placehoder1  showkey:showkey1 showValue:showValue1 inputLength:inputLength1 readOnly:readOnly1]
 
 @interface HqInputModel : NSObject
 
@@ -20,5 +23,7 @@
 @property (nonatomic,assign) int hqInputLength;//输入字符数字
 
 @property (nonatomic,assign) BOOL isReadOnly;//是否只读
+
++ (HqInputModel *)inputModelWithKey:(NSString *)key placehoder:(NSString *)placehoder showkey:(NSString *)showkey showValue:(NSString *)showValue inputLength:(int)inputLength readOnly:(BOOL)readOnly;
 
 @end

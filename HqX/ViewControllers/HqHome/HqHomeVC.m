@@ -7,8 +7,11 @@
 //
 
 #import "HqHomeVC.h"
+#import "HqHeartAnimation.h"
 
 @interface HqHomeVC ()
+
+@property (nonatomic,strong) HqHeartAnimation *heartView;
 
 @end
 
@@ -18,8 +21,15 @@
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     self.title = @"Home";
+    [self.view addSubview:self.heartView];
 }
-
+- (HqHeartAnimation *)heartView{
+    if (!_heartView) {
+        _heartView = [[HqHeartAnimation alloc] initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width-100, self.view.bounds.size.width)];
+    }
+   return  _heartView;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
