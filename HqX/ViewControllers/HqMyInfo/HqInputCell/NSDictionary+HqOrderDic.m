@@ -18,7 +18,7 @@ void * khqAllkeys = "hqAllkeys";
 - (void)setHqAllkeys:(NSMutableArray *)hqAllkeys{
     objc_setAssociatedObject(self, khqAllkeys, hqAllkeys, OBJC_ASSOCIATION_RETAIN);
 }
-- (void)hqSetOjectValue:(id)value forKey:(NSString *)key{
+- (void)hqSetObjectValue:(id)value forKey:(NSString *)key{
     if (self.hqAllkeys==nil) {
         self.hqAllkeys = [[NSMutableArray alloc] initWithCapacity:0];
     }

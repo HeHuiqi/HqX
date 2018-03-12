@@ -12,6 +12,6 @@
 
 @property (nonatomic,strong) NSMutableArray *hqAllkeys;
 
-- (void)hqSetOjectValue:(id)value forKey:(NSString *)key;
+- (void)hqSetObjectValue:(id)value forKey:(NSString *)key;
 - (id)hqGetValueWithIndex:(NSInteger)index;
 @end

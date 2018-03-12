@@ -73,18 +73,18 @@
     address.hqShowKey = @"地址";
     address.hqPlaceHoder = @"请入地址";
     
+    self.datas = @[name,nickname,age,idNum,mobile,degree,address];
+
+    
     NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
-    [dataDic hqSetOjectValue:name forKey:name.hqKey];
-    [dataDic hqSetOjectValue:nickname forKey:nickname.hqKey];
-    [dataDic hqSetOjectValue:age forKey:age.hqKey];
-    [dataDic hqSetOjectValue:idNum forKey:idNum.hqKey];
-    [dataDic hqSetOjectValue:mobile forKey:mobile.hqKey];
-    [dataDic hqSetOjectValue:degree forKey:degree.hqKey];
-    [dataDic hqSetOjectValue:address forKey:address.hqKey];
+    [dataDic hqSetObjectValue:name forKey:name.hqKey];
+    [dataDic hqSetObjectValue:nickname forKey:nickname.hqKey];
+    [dataDic hqSetObjectValue:age forKey:age.hqKey];
+    [dataDic hqSetObjectValue:idNum forKey:idNum.hqKey];
+    [dataDic hqSetObjectValue:mobile forKey:mobile.hqKey];
+    [dataDic hqSetObjectValue:degree forKey:degree.hqKey];
+    [dataDic hqSetObjectValue:address forKey:address.hqKey];
     self.dataDics = dataDic;
-    
-    
-//    self.datas = @[name,nickname,age,idNum,mobile,degree,address];
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -113,7 +113,6 @@
     }
 //    cell.inputModel = _datas[indexPath.row];
     cell.inputModel = [_dataDics hqGetValueWithIndex:indexPath.row];
-
     
     return cell;
 }
