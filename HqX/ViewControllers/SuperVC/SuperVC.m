@@ -56,15 +56,9 @@
     self.leftBtn.tintColor = HqBarBtnTintColor;
     self.leftBtn.frame = CGRectMake(0, 0, 50, 44);
     self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    self.leftBtn.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.leftBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.navigationItem.leftBarButtonItem = [self barItemWithView:self.leftBtn];
- 
     self.navbarCorlor = HqNavBarColor;
-//    self.navigationController.navigationBar.barTintColor = self.navbarCorlor;
-    
 
-   
 }
 - (UILabel *)titelLab{
     if (!_titelLab) {
@@ -163,12 +157,10 @@
     [super didReceiveMemoryWarning];
 }
 - (void)viewWillAppear:(BOOL)animated{
+    
+    //获取上一个导航的状态然后重新赋值
     SuperVC *vc = (SuperVC *)[self.navigationController.viewControllers lastObject];
-    if (vc.isShowBottomLine) {
-        [self.navigationController.navigationBar setShadowImage:self.bottomLineImage];
-    }else{
-        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    }
+    vc.isShowBottomLine = vc.isShowBottomLine;
     vc.navbarCorlor = vc.navbarCorlor;
     [super viewWillAppear:animated];
 
