@@ -21,7 +21,7 @@
     UILabel *lab = [[UILabel alloc] init];
     [self.view addSubview:lab];
     self.leftBtn.hidden = YES;
-    self.title = @"My";
+    self.title = @"MyCenter";
     [lab centerXWithView:self.view space:0];
     [lab centerYWithView:self.view space:0];
     lab.text = @"点击屏幕进入用户详情";

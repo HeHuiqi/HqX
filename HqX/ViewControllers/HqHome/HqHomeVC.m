@@ -21,7 +21,7 @@
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     self.title = @"Home";
-    [self.view addSubview:self.heartView];
+//    [self.view addSubview:self.heartView];
 }
 - (HqHeartAnimation *)heartView{
     if (!_heartView) {

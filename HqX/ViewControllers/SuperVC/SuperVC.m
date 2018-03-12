@@ -12,69 +12,77 @@
 
 @interface SuperVC ()
 
+@property (nonatomic,strong) UIImage *bottomLineImage;
+
 @end
 
 @implementation SuperVC
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
+- (UIImage*) createImageWithColor: (UIColor*) color
+{
+    CGFloat height = 1.0/[UIScreen mainScreen].scale;
+    CGRect rect=CGRectMake(0,0, 1, height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+- (void)setBottomLineColor:(UIColor *)bottomLineColor{
+    _bottomLineColor = bottomLineColor;
+}
+
+- (UIImage *)bottomLineImage{
+    if (!_isShowBottomLine) {
+       
+        _bottomLineImage = [self createImageWithColor:self.bottomLineColor];
+    }
+    return _bottomLineImage;
+  
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.navBarView];
-    self.navBarView.backgroundColor  = HqNavBarColor;
+    self.navigationController.navigationBar.translucent = NO;
+
     [self titelLab];
- 
+    self.bottomLineColor = [UIColor colorWithRed:197.0/255.0 green:197.0/255.0 blue:200.0/255.0 alpha:1];
+    self.isShowBottomLine = YES;
 
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.leftBtnImageName = nil;
     self.leftBtn.tintColor = HqBarBtnTintColor;
+    self.leftBtn.frame = CGRectMake(0, 0, 50, 44);
+    self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.leftBtn.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.leftBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.navigationItem.leftBarButtonItem = [self barItemWithView:self.leftBtn];
+ 
+    self.navbarCorlor = HqNavBarColor;
+//    self.navigationController.navigationBar.barTintColor = self.navbarCorlor;
     
+
    
 }
 - (UILabel *)titelLab{
     if (!_titelLab) {
-        _titelLab = [[UILabel alloc]init];
+        _titelLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 20)];
+        _titelLab.textAlignment = NSTextAlignmentCenter;
         _titelLab.textColor = HqTitleColor;
         _titelLab.font = [UIFont boldSystemFontOfSize:HqTitleFontsize];
-        [self.navBarView addSubview:_titelLab];
-        /*
-        [_titelLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.navBarView.mas_centerX);
-//            make.left.equalTo(self.navBarView).offset(kZoomValue(50));
-            make.bottom.equalTo(_navBarView).offset(0);
-            make.height.mas_equalTo(44);
-        }];*/
-
-        _titelLab.translatesAutoresizingMaskIntoConstraints = NO;
-        [_titelLab bottomWithView:self.navBarView space:0];
-        [_titelLab centerXWithView:self.navBarView space:0];
-        [_titelLab height:44];
+        self.navigationItem.titleView = _titelLab;
         
+       
     }
     return _titelLab;
 }
 - (void)setLeftBtn:(UIButton *)leftBtn{
     if (leftBtn) {
-        [_leftBtn removeFromSuperview];
         _leftBtn = leftBtn;
-        [self.navBarView addSubview:_leftBtn];
     }
-    self.leftBtn.tintColor = [UIColor whiteColor];
-
     [_leftBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
-    /*
-    [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_navBarView).offset(0);
-        make.bottom.equalTo(_navBarView).offset(0);
-        make.size.mas_equalTo(CGSizeMake(50, 44));
-    }];
-    */
-    [_leftBtn leftWithView:self.navBarView space:0];
-    [_leftBtn bottomWithView:self.navBarView space:0];
-    [_leftBtn size:CGSizeMake(50, 44)];
 }
 - (void)setLeftBtnImageName:(NSString *)leftBtnImageName{
 
@@ -95,20 +103,13 @@
     if (rightBtn) {
         [_rightBtn removeFromSuperview];
         _rightBtn = rightBtn;
-        [self.navBarView addSubview:_rightBtn];
+        self.navigationItem.rightBarButtonItem = [self barItemWithView:_rightBtn];
     }
-    /*
-    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_navBarView).offset(0);
-        make.bottom.equalTo(_navBarView).offset(0);
-        make.size.mas_equalTo(CGSizeMake(50, 44));
-    }];
-    */
-    [_rightBtn rightWithView:self.navBarView space:0];
-    [_rightBtn bottomWithView:self.navBarView space:0];
-    [_rightBtn size:CGSizeMake(50, 44)];
 }
-
+- (UIBarButtonItem *)barItemWithView:(UIView *)view{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:view];
+    return item;
+}
 - (void)setRightBtnImageName:(NSString *)rightBtnImageName{
     
     UIImage *image = [UIImage imageNamed:rightBtnImageName];
@@ -116,61 +117,36 @@
     [_rightBtn setImage:image forState:UIControlStateNormal];
 }
 - (void)setTitle:(NSString *)title{
-    [super setTitle:title];
     _titelLab.text = title;
-}
--(UIView *)navBarView{
-    if (!_navBarView) {
-        BOOL device = IS_NOT_IPHONE_X;
-        CGFloat barHeight = 64;
-        if (!device) {
-            barHeight = 88;
-        }
-        self.navBarheight = barHeight;
-        _navBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.navBarheight)];
-        _navBarView.backgroundColor = [UIColor whiteColor];
-    }
-    
-   
+    [_titelLab sizeToFit];
 
-    return _navBarView;
+    [super setTitle:title];
+
 }
-- (UIBezierPath *)shadowPath{
-    if(!_shadowPath){
-    _navBarView.layer.shadowColor = [UIColor redColor].CGColor;
-    _navBarView.layer.shadowOpacity = 1.0;
-    _navBarView.layer.shadowOffset = CGSizeMake(_navBarView.bounds.size.width, HqShadowHeight);
-    CGFloat shadowHeight = HqShadowHeight;
-    UIBezierPath *shadowdPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, _navBarView.bounds.size.height+shadowHeight, _navBarView.bounds.size.width, shadowHeight)];
-        _shadowPath = shadowdPath;
+- (CGFloat )navBarheight{
+    BOOL device = IS_NOT_IPHONE_X;
+    CGFloat barHeight = 64;
+    if (!device) {
+        barHeight = 88;
     }
-    return _shadowPath;
+    return barHeight;
 }
+
+#pragma mark - BottomLine
 - (void)setIsShowBottomLine:(BOOL)isShowBottomLine{
     _isShowBottomLine = isShowBottomLine;
-    
     if (_isShowBottomLine) {
-        UIView *xline = [[UIView alloc] init];
-        xline.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        [_navBarView addSubview:xline];
-        /*
-        [xline mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(_navBarView).offset(0);
-            make.left.equalTo(self.view).offset(0);
-            make.size.mas_equalTo(CGSizeMake(self.view.bounds.size.width, 0.5));
-        }];
-        */
-        [xline bottomWithView:self.navBarView space:0];
-        [xline leftWithView:self.navBarView space:0];
-        [xline size:CGSizeMake(self.view.bounds.size.width, 0.5)];
-        _bottomLine = xline;
+        [self.navigationController.navigationBar setShadowImage:self.bottomLineImage];
+    }else{
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     }
 }
-
 -(void)backClick
 {
-    [self.view endEditing:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.navigationController.viewControllers.count>0) {
+        [self.view endEditing:YES];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (void)backToVC:(NSString *)vcName{
     
@@ -182,14 +158,26 @@
         }
     }
 }
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-
-    _navBarView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.navBarheight);
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    SuperVC *vc = (SuperVC *)[self.navigationController.viewControllers lastObject];
+    if (vc.isShowBottomLine) {
+        [self.navigationController.navigationBar setShadowImage:self.bottomLineImage];
+    }else{
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    }
+    vc.navbarCorlor = vc.navbarCorlor;
+    [super viewWillAppear:animated];
+
+}
+- (void)setNavbarCorlor:(UIColor *)navbarCorlor{
+    _navbarCorlor = navbarCorlor;
+    if (_navbarCorlor) {
+        self.navigationController.navigationBar.barTintColor = _navbarCorlor;
+    }
 }
 
 @end

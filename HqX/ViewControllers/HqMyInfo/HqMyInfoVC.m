@@ -8,6 +8,7 @@
 
 #import "HqMyInfoVC.h"
 #import "HqInputCell.h"
+#import "HqMyVC.h"
 @interface HqMyInfoVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -19,19 +20,19 @@
 
 @implementation HqMyInfoVC
 
+- (void)dealloc{
+    NSLog(@"self == %@",self);
+    self.isShowBottomLine = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
     self.view.backgroundColor = [UIColor purpleColor];
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self.navigationItem.leftBarButtonItem = left;
     [self initView];
     self.title = @"MyInfo";
     self.leftBtnImageName = @"back";
-
-}
-- (void)back{
-    [self.navigationController popViewControllerAnimated:YES];
+    self.isShowBottomLine = NO;
+    self.navbarCorlor = [UIColor redColor];
 }
 - (void)initData{
     HqInputModel *name = [[HqInputModel alloc] init];
@@ -88,10 +89,10 @@
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    _tableView.frame = CGRectMake(0,self.navBarheight,self.view.bounds.size.width, self.view.bounds.size.height-self.navBarheight);
+    _tableView.frame = CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.height);
 }
 - (void)initView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.navBarheight,self.view.bounds.size.width, self.view.bounds.size.height-self.navBarheight) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
@@ -118,6 +119,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HqMyVC *my = [[HqMyVC alloc] init];
+    [self.navigationController pushViewController:my animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

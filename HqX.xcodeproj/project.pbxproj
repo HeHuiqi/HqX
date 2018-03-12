@@ -103,6 +103,7 @@
 		8EC81B46204FF00D0073D356 /* HqInputModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81B44204FF00D0073D356 /* HqInputModel.m */; };
 		8EC81B47204FF00D0073D356 /* HqInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81B45204FF00D0073D356 /* HqInputCell.m */; };
 		8EC81B4A204FF05F0073D356 /* NSDictionary+HqOrderDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81B49204FF05F0073D356 /* NSDictionary+HqOrderDic.m */; };
+		8ED98A2E2056685500CBE329 /* SuperCustemNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */; };
 		8EFDCC2B2029B38100D82A76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2A2029B38100D82A76 /* AppDelegate.m */; };
 		8EFDCC2E2029B38100D82A76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2D2029B38100D82A76 /* ViewController.m */; };
 		8EFDCC312029B38100D82A76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2F2029B38100D82A76 /* Main.storyboard */; };
@@ -304,6 +305,8 @@
 		8EC81B45204FF00D0073D356 /* HqInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqInputCell.m; sourceTree = "<group>"; };
 		8EC81B48204FF05F0073D356 /* NSDictionary+HqOrderDic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HqOrderDic.h"; sourceTree = "<group>"; };
 		8EC81B49204FF05F0073D356 /* NSDictionary+HqOrderDic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HqOrderDic.m"; sourceTree = "<group>"; };
+		8ED98A2C2056685500CBE329 /* SuperCustemNavBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCustemNavBarVC.h; sourceTree = "<group>"; };
+		8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCustemNavBarVC.m; sourceTree = "<group>"; };
 		8EFDCC262029B38100D82A76 /* HqX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFDCC292029B38100D82A76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EFDCC2A2029B38100D82A76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				8E4D68B22029BB4E0039BE57 /* SuperNavigationVC.m */,
 				8E4D68B42029BB4E0039BE57 /* SuperVC.h */,
 				8E4D68B32029BB4E0039BE57 /* SuperVC.m */,
+				8ED98A2C2056685500CBE329 /* SuperCustemNavBarVC.h */,
+				8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */,
 				8E521DFB202A9B67000E729D /* UIView+HqAutoLayout.h */,
 				8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */,
 			);
@@ -957,6 +962,7 @@
 				8EC81B3C204FE73C0073D356 /* AFHTTPSessionManager.m in Sources */,
 				8EFDCC4D2029B4A500D82A76 /* HqRootVC.m in Sources */,
 				8E4D68DE2029BC030039BE57 /* MASConstraint.m in Sources */,
+				8ED98A2E2056685500CBE329 /* SuperCustemNavBarVC.m in Sources */,
 				8EC81B34204FE73C0073D356 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				8EC81B2C204FE73C0073D356 /* IQUIScrollView+Additions.m in Sources */,
 				8E4D68B72029BB4F0039BE57 /* SuperVC.m in Sources */,

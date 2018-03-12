@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBarHidden = YES;
+//    self.navigationBarHidden = YES;
     self.interactivePopGestureRecognizer.delegate = self;
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{

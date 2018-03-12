@@ -1,10 +1,10 @@
 //
-//  SuperVC.h
-//  XWF_iOS
+//  SuperCustemNavBarVC.h
+//  HqX
 //
-//  Created by iMac on 15/6/8.
-//  Copyright (c) 2015年 xwf_id. All rights reserved.
-//
+//  Created by macpro on 2018/3/12.
+//  Copyright © 2018年 macpro. All rights reserved.
+//隐藏系统导航条
 
 #import <UIKit/UIKit.h>
 #define HqDeviceHeight [UIScreen mainScreen].bounds.size.height
@@ -18,11 +18,9 @@
 #define HqBarBtnTintColor [UIColor blackColor]
 
 #define HqShadowHeight 2
+@interface SuperCustemNavBarVC : UIViewController
 
-@interface SuperVC : UIViewController
-
-@property (nonatomic,strong) UIColor *navbarCorlor;
-
+@property (nonatomic,strong) UIView *navBarView;
 @property (nonatomic,assign) CGFloat navBarheight;
 @property (nonatomic,strong) UILabel *titelLab;
 @property (nonatomic,strong) UIButton *leftBtn;
@@ -32,9 +30,8 @@
 @property (nonatomic,copy) NSString *rightBtnImageName;
 
 @property (nonatomic,assign) BOOL isShowBottomLine;
-@property (nonatomic,strong) UIColor *bottomLineColor;
+@property (nonatomic,strong) UIView *bottomLine;
 
--(void)backClick;
-- (void)backToVC:(NSString *)vcName;
+@property (nonatomic,strong) UIBezierPath *shadowPath;
 
 @end
