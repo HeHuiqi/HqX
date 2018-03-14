@@ -22,8 +22,8 @@
 @interface SuperVC : UIViewController
 
 @property (nonatomic,strong) UIColor *navbarCorlor;
-
 @property (nonatomic,assign) CGFloat navBarheight;
+
 @property (nonatomic,strong) UILabel *titelLab;
 @property (nonatomic,strong) UIButton *leftBtn;
 @property (nonatomic,copy) NSString *leftBtnImageName;

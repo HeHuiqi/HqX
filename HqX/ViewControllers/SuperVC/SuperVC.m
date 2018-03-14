@@ -58,7 +58,6 @@
     self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.navigationItem.leftBarButtonItem = [self barItemWithView:self.leftBtn];
     self.navbarCorlor = HqNavBarColor;
-
 }
 - (UILabel *)titelLab{
     if (!_titelLab) {
@@ -157,13 +156,20 @@
     [super didReceiveMemoryWarning];
 }
 - (void)viewWillAppear:(BOOL)animated{
+
+    [self viewControllerReset];
+    
+    [super viewWillAppear:animated];
+}
+- (void)viewControllerReset{
     
     //获取上一个导航的状态然后重新赋值
-    SuperVC *vc = (SuperVC *)[self.navigationController.viewControllers lastObject];
-    vc.isShowBottomLine = vc.isShowBottomLine;
-    vc.navbarCorlor = vc.navbarCorlor;
-    [super viewWillAppear:animated];
 
+    SuperVC *vc = nil;
+//    NSLog(@"viewControllers == %@",self.navigationController.viewControllers);
+    vc = (SuperVC *)[self.navigationController.viewControllers lastObject];
+    vc.navbarCorlor = vc.navbarCorlor;
+    vc.isShowBottomLine = vc.isShowBottomLine;
 }
 - (void)setNavbarCorlor:(UIColor *)navbarCorlor{
     _navbarCorlor = navbarCorlor;

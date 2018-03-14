@@ -307,6 +307,7 @@
 		8EC81B49204FF05F0073D356 /* NSDictionary+HqOrderDic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HqOrderDic.m"; sourceTree = "<group>"; };
 		8ED98A2C2056685500CBE329 /* SuperCustemNavBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCustemNavBarVC.h; sourceTree = "<group>"; };
 		8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCustemNavBarVC.m; sourceTree = "<group>"; };
+		8ED98A3C2058CBEB00CBE329 /* HqXPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqXPrefix.pch; sourceTree = "<group>"; };
 		8EFDCC262029B38100D82A76 /* HqX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFDCC292029B38100D82A76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EFDCC2A2029B38100D82A76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -735,6 +736,7 @@
 				8EFDCC322029B38100D82A76 /* Assets.xcassets */,
 				8EFDCC342029B38100D82A76 /* LaunchScreen.storyboard */,
 				8EFDCC372029B38100D82A76 /* Info.plist */,
+				8ED98A3C2058CBEB00CBE329 /* HqXPrefix.pch */,
 				8EFDCC382029B38100D82A76 /* main.m */,
 			);
 			path = HqX;
@@ -1102,6 +1104,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34AC3PEMF7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HqX/HqXPrefix.pch;
 				INFOPLIST_FILE = HqX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1117,6 +1121,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34AC3PEMF7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HqX/HqXPrefix.pch;
 				INFOPLIST_FILE = HqX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

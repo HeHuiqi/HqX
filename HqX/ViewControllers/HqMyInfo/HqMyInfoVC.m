@@ -20,10 +20,6 @@
 
 @implementation HqMyInfoVC
 
-- (void)dealloc{
-    NSLog(@"self == %@",self);
-    self.isShowBottomLine = YES;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
