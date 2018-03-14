@@ -50,7 +50,7 @@ fi
 echo '开始打包。。。'
 
 pkg_plist="pkg.plist"
-if [ ! -d $pkg_plist ]
+if [ ! -f $pkg_plist ]
 then
     /usr/libexec/PlistBuddy -c "print" pkg.plist
     /usr/libexec/PlistBuddy -c "Add :bundle-identifier string ${projectName}" $pkg_plist

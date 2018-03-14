@@ -23,6 +23,8 @@
 		8E4D68E02029BC030039BE57 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D68D42029BC030039BE57 /* MASViewAttribute.m */; };
 		8E4D68E12029BC030039BE57 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E4D68D52029BC030039BE57 /* README.md */; };
 		8E521DFD202A9B67000E729D /* UIView+HqAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */; };
+		8EA9C4C920591CE40098FC05 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9C4C820591CE40098FC05 /* README.md */; };
+		8EA9C4CB20591D840098FC05 /* pkg.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9C4CA20591D840098FC05 /* pkg.sh */; };
 		8EC81A51204FB6300073D356 /* HqHeartAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81A50204FB6300073D356 /* HqHeartAnimation.m */; };
 		8EC81AF5204FE73C0073D356 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81A58204FE73B0073D356 /* MJPropertyType.m */; };
 		8EC81AF6204FE73C0073D356 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81A5B204FE73B0073D356 /* NSObject+MJKeyValue.m */; };
@@ -153,6 +155,8 @@
 		8E4D68D52029BC030039BE57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E521DFB202A9B67000E729D /* UIView+HqAutoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HqAutoLayout.h"; sourceTree = "<group>"; };
 		8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HqAutoLayout.m"; sourceTree = "<group>"; };
+		8EA9C4C820591CE40098FC05 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8EA9C4CA20591D840098FC05 /* pkg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pkg.sh; sourceTree = "<group>"; };
 		8EC81A4F204FB6300073D356 /* HqHeartAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqHeartAnimation.h; sourceTree = "<group>"; };
 		8EC81A50204FB6300073D356 /* HqHeartAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqHeartAnimation.m; sourceTree = "<group>"; };
 		8EC81A55204FE73B0073D356 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
@@ -721,6 +725,8 @@
 		8EFDCC1D2029B38100D82A76 = {
 			isa = PBXGroup;
 			children = (
+				8EA9C4CA20591D840098FC05 /* pkg.sh */,
+				8EA9C4C820591CE40098FC05 /* README.md */,
 				8EFDCC282029B38100D82A76 /* HqX */,
 				8EFDCC272029B38100D82A76 /* Products */,
 				8ED98A3D2059044800CBE329 /* Frameworks */,
@@ -866,7 +872,9 @@
 			files = (
 				8EC81AFF204FE73C0073D356 /* LICENSE in Resources */,
 				8EFDCC362029B38100D82A76 /* LaunchScreen.storyboard in Resources */,
+				8EA9C4C920591CE40098FC05 /* README.md in Resources */,
 				8EC81B1D204FE73C0073D356 /* LICENSE in Resources */,
+				8EA9C4CB20591D840098FC05 /* pkg.sh in Resources */,
 				8EFDCC332029B38100D82A76 /* Assets.xcassets in Resources */,
 				8EC81B05204FE73C0073D356 /* SVProgressHUD.bundle in Resources */,
 				8EC81B00204FE73C0073D356 /* README.md in Resources */,

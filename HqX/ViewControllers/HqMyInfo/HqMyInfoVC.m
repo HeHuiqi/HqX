@@ -25,9 +25,7 @@
     self.title = @"MyInfo";
     self.leftBtnImageName = @"取消修改";
     
-//    self.navbarCorlor = [UIColor redColor];
-    
-//    self.bottomLineColor = [UIColor blueColor];
+    self.navbarCorlor = [UIColor redColor];
     self.isShowBottomLine = NO;
 
     self.leftBtn.tintColor = [UIColor whiteColor];

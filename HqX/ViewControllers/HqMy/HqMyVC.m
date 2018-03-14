@@ -25,11 +25,12 @@
     
     UILabel *lab = [[UILabel alloc] init];
     [self.view addSubview:lab];
-    lab.text = @"点击屏幕进入用户详情";
+    lab.text = @"点击屏幕进入继续";
     [lab centerXWithView:self.view space:0];
     [lab centerYWithView:self.view space:0];
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
     if (self.navigationController.viewControllers.count>2) {
         HqHomeVC *myInfo = [[HqHomeVC alloc] init];
         myInfo.hidesBottomBarWhenPushed = YES;
