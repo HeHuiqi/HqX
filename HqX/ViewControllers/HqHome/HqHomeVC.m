@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.leftBtn.hidden = YES;
     self.title = @"Home";
 //    [self.view addSubview:self.heartView];
 }

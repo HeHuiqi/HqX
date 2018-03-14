@@ -104,6 +104,7 @@
 		8EC81B47204FF00D0073D356 /* HqInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81B45204FF00D0073D356 /* HqInputCell.m */; };
 		8EC81B4A204FF05F0073D356 /* NSDictionary+HqOrderDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81B49204FF05F0073D356 /* NSDictionary+HqOrderDic.m */; };
 		8ED98A2E2056685500CBE329 /* SuperCustemNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */; };
+		8ED98A3F2059044900CBE329 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED98A3E2059044900CBE329 /* MobileCoreServices.framework */; };
 		8EFDCC2B2029B38100D82A76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2A2029B38100D82A76 /* AppDelegate.m */; };
 		8EFDCC2E2029B38100D82A76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2D2029B38100D82A76 /* ViewController.m */; };
 		8EFDCC312029B38100D82A76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFDCC2F2029B38100D82A76 /* Main.storyboard */; };
@@ -308,6 +309,7 @@
 		8ED98A2C2056685500CBE329 /* SuperCustemNavBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCustemNavBarVC.h; sourceTree = "<group>"; };
 		8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCustemNavBarVC.m; sourceTree = "<group>"; };
 		8ED98A3C2058CBEB00CBE329 /* HqXPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqXPrefix.pch; sourceTree = "<group>"; };
+		8ED98A3E2059044900CBE329 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8EFDCC262029B38100D82A76 /* HqX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFDCC292029B38100D82A76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8EFDCC2A2029B38100D82A76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED98A3F2059044900CBE329 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,11 +710,20 @@
 			path = HqInputCell;
 			sourceTree = "<group>";
 		};
+		8ED98A3D2059044800CBE329 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ED98A3E2059044900CBE329 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8EFDCC1D2029B38100D82A76 = {
 			isa = PBXGroup;
 			children = (
 				8EFDCC282029B38100D82A76 /* HqX */,
 				8EFDCC272029B38100D82A76 /* Products */,
+				8ED98A3D2059044800CBE329 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

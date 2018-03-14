@@ -9,7 +9,7 @@
 #import "HqMyVC.h"
 #import "HqMyInfoVC.h"
 #import "UIView+HqAutoLayout.h"
-
+#import "HqHomeVC.h"
 @interface HqMyVC ()
 
 @end
@@ -18,28 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"MyCenter";
+    self.leftBtnImageName = @"返回";
+
+    
     UILabel *lab = [[UILabel alloc] init];
     [self.view addSubview:lab];
-    self.leftBtn.hidden = YES;
-    self.title = @"MyCenter";
+    lab.text = @"点击屏幕进入用户详情";
     [lab centerXWithView:self.view space:0];
     [lab centerYWithView:self.view space:0];
-    lab.text = @"点击屏幕进入用户详情";
-    [self tapView:self.view];
 }
-- (void)tapView:(UIView *)view{
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-    [view addGestureRecognizer:tap];
-}
-- (void)tapGesture:(UITapGestureRecognizer *)tap{
-    
-    
-//    [UIViewController attemptRotationToDeviceOrientation];
-    
-    HqMyInfoVC *myInfo = [[HqMyInfoVC alloc] init];
-    myInfo.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:myInfo animated:YES];
-    
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if (self.navigationController.viewControllers.count>2) {
+        HqHomeVC *myInfo = [[HqHomeVC alloc] init];
+        myInfo.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:myInfo animated:YES];
+    }else{
+        HqMyInfoVC *myInfo = [[HqMyInfoVC alloc] init];
+        myInfo.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:myInfo animated:YES];
+    }
+   
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -22,13 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initData];
-    self.view.backgroundColor = [UIColor purpleColor];
-    [self initView];
     self.title = @"MyInfo";
-    self.leftBtnImageName = @"back";
+    self.leftBtnImageName = @"取消修改";
+    
+//    self.navbarCorlor = [UIColor redColor];
+    
+//    self.bottomLineColor = [UIColor blueColor];
     self.isShowBottomLine = NO;
-    self.navbarCorlor = [UIColor redColor];
+
+    self.leftBtn.tintColor = [UIColor whiteColor];
+    self.titelLab.textColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor purpleColor];
+
+    [self initData];
+    [self initView];
+    
 }
 - (void)initData{
     HqInputModel *name = [[HqInputModel alloc] init];
