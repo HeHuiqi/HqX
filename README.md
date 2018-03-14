@@ -1,4 +1,6 @@
 # HqX
+## [简书主页]( https://www.jianshu.com/u/b37773b21ff3)
+
 ## iPoneX的适配，导航适配
 这个项目是一个关于iPoneX适配的项目，可以作为一个App的简单框架
 使用方式看代码
