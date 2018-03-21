@@ -9,8 +9,9 @@
 //#define NavigationBarColor COLOR(59, 181, 247, 1)
 
 #import "SuperNavigationVC.h"
+#import "HqViewControllerAnimated.h"
 
-@interface SuperNavigationVC ()<UIGestureRecognizerDelegate>
+@interface SuperNavigationVC ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.interactivePopGestureRecognizer.delegate = self;
+    self.delegate = self;
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
     
@@ -41,6 +43,9 @@
     
 }
 */
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
+    return [[HqViewControllerAnimated alloc] init];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

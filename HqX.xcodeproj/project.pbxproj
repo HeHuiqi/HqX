@@ -23,6 +23,7 @@
 		8E4D68E02029BC030039BE57 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D68D42029BC030039BE57 /* MASViewAttribute.m */; };
 		8E4D68E12029BC030039BE57 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E4D68D52029BC030039BE57 /* README.md */; };
 		8E521DFD202A9B67000E729D /* UIView+HqAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */; };
+		8E755F592062688C003CEC16 /* HqViewControllerAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E755F582062688C003CEC16 /* HqViewControllerAnimated.m */; };
 		8EA9C4C920591CE40098FC05 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9C4C820591CE40098FC05 /* README.md */; };
 		8EA9C4CB20591D840098FC05 /* pkg.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8EA9C4CA20591D840098FC05 /* pkg.sh */; };
 		8EC81A51204FB6300073D356 /* HqHeartAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC81A50204FB6300073D356 /* HqHeartAnimation.m */; };
@@ -155,6 +156,8 @@
 		8E4D68D52029BC030039BE57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E521DFB202A9B67000E729D /* UIView+HqAutoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HqAutoLayout.h"; sourceTree = "<group>"; };
 		8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HqAutoLayout.m"; sourceTree = "<group>"; };
+		8E755F572062688C003CEC16 /* HqViewControllerAnimated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqViewControllerAnimated.h; sourceTree = "<group>"; };
+		8E755F582062688C003CEC16 /* HqViewControllerAnimated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqViewControllerAnimated.m; sourceTree = "<group>"; };
 		8EA9C4C820591CE40098FC05 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8EA9C4CA20591D840098FC05 /* pkg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pkg.sh; sourceTree = "<group>"; };
 		8EC81A4F204FB6300073D356 /* HqHeartAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqHeartAnimation.h; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 				8ED98A2D2056685500CBE329 /* SuperCustemNavBarVC.m */,
 				8E521DFB202A9B67000E729D /* UIView+HqAutoLayout.h */,
 				8E521DFC202A9B67000E729D /* UIView+HqAutoLayout.m */,
+				8E755F572062688C003CEC16 /* HqViewControllerAnimated.h */,
+				8E755F582062688C003CEC16 /* HqViewControllerAnimated.m */,
 			);
 			path = SuperVC;
 			sourceTree = "<group>";
@@ -958,6 +963,7 @@
 				8EC81B47204FF00D0073D356 /* HqInputCell.m in Sources */,
 				8EC81B40204FE73C0073D356 /* AFSecurityPolicy.m in Sources */,
 				8EC81B0E204FE73C0073D356 /* SDWebImageDownloader.m in Sources */,
+				8E755F592062688C003CEC16 /* HqViewControllerAnimated.m in Sources */,
 				8E4D68DF2029BC030039BE57 /* MASViewConstraint.m in Sources */,
 				8EFDCC2B2029B38100D82A76 /* AppDelegate.m in Sources */,
 				8EC81B02204FE73C0073D356 /* SVProgressAnimatedView.m in Sources */,
